@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="E_Commerce.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <%--<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
+    <link href="Content/menu.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        
+        
+        
+        <div style="height: 100px; width: 100%; background-color: gray">
+            
+        </div>
+        <div class="menuclass" style="height: 70px; width: 100%; background-color: greenyellow;">
+            <ul class="nav navbar-nav ">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a href="#">References</a>
+                            <ul>
+                                <li><a runat="server" href="~/City">City</a></li>
+                                <li><a runat="server" href="~/Country">Country</a></li>
+                                <li><a runat="server" href="~/Location">Location</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Product</a>
+                            <ul>
+                                <li><a runat="server" href="~/Brand">Brand</a></li>
+                                <li><a runat="server" href="~/Category">Category</a></li>
+                                <li><a runat="server" href="~/Unit">Unit</a></li>
+                                <li><a runat="server" href="~/Product">Product</a></li>
+                                <li><a runat="server" href="~/ProductComments">Product Comments</a></li>
+                                <li><a runat="server" href="~/ProductLike">Product Like</a></li>
+                                <li><a runat="server" href="~/ProductManual">Product Manual</a></li>
+                                <li><a runat="server" href="~/ProductImage">Product Image</a></li>
+                                <li><a runat="server" href="~/ProductStock">Product Stock</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Order</a>
+                            <ul>
+                                <li><a runat="server" href="~/PaymentMethod">Payment Method</a></li>
+                                <li><a runat="server" href="~/Orders">Orders</a></li>
+                                <li><a runat="server" href="~/OrderDetails">Order Details</a></li>
+                                <li><a runat="server" href="~/OrderStatus">Order Status</a></li>
+                                <li><a runat="server" href="~/Status">Status</a></li>
+                            </ul>
+                        </li>
+                                
+                        <li><a href="#">User</a>
+                            <ul>
+                                <li><a runat="server" href="~/User">User</a></li>
+                                <li><a runat="server" href="~/UsersActive">Active</a></li>
+                                <li><a runat="server" href="~/UsersLoginHistory">Login History</a></li>
+                                <li><a runat="server" href="~/UsersProduct">Product</a></li>
+                            </ul>
+                        </li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <%
+                            string s = "";
+                            if (Session["userType"].ToString() != "")
+                            {
+                                s += "<li><a href=\"myAccount.aspx?myId=" + Session["id"] + "\">" + Session["name"] + "</a></li>";
+                                s += "<li><a href=\"Logout.aspx\">Logout</a></li>";
+                            }
+                            else
+                            {
+                                s += "<li><a href=\"Register.aspx\">Register</a></li>";
+                                s += "<li><a href=\"Login.aspx\">Login</a></li>";
+                            }     
+                        %><% =s %>  
+                    </ul>
+        </div>
+        <div style="height: 800px; width: 100%; padding: 15px;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div style="height: 100px; width: 100%; background-color: greenyellow">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+    </form>
+</body>
+</html>
