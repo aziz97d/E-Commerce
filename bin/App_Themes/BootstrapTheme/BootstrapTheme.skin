@@ -1,0 +1,29 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<%-- ----------Grid View---------- --%>
+    <asp:GridView  CssClass="table table-striped table-bordered table-sm" Width="100%" runat="server">
+        <HeaderStyle BackColor="#CCFFCC" CssClass="thead-light" />
+        
+    </asp:GridView>
+
+
+<asp:DetailsView  runat="server"  Height="50px" Width="40%" BackColor="#FFFFCC" BorderColor="#33CC33" CssClass="table" GridLines="Horizontal">
+        <FieldHeaderStyle BackColor="#CCFFCC" Font-Size="16px" Font-Bold="True" HorizontalAlign="Right" VerticalAlign="Middle" Width="30%" />
+        <InsertRowStyle BackColor="White" Wrap="True" HorizontalAlign="Center" VerticalAlign="Middle" />
+</asp:DetailsView>
+
+<asp:HyperLink CssClass="btn btn-success" runat="server"></asp:HyperLink>
